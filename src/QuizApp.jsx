@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from "react";
 
-
 const TIMER_DURATION = 30;
 
 const QuizApp = () => {
   const [quizQuestions, setQuizQuestions] = useState([]);
-  const [currQIndex, setCurrQIndex] = useState(0);  
+  const [currQIndex, setCurrQIndex] = useState(0);
   const [userAnswers, setUserAnswers] = useState({});
   const [secondsLeft, setSecondsLeft] = useState(TIMER_DURATION);
   const [submitted, setSubmitted] = useState(false);
-
 
   useEffect(() => {
     fetch("http://localhost:3001/data")
@@ -18,11 +16,10 @@ const QuizApp = () => {
         if (data?.questions) {
           setQuizQuestions(data.questions);
         } else {
-          console.error("No questions found in the response"); 
+          console.error("No questions found in the response");
         }
       });
   }, []);
-
 
   useEffect(() => {
     if (!submitted && quizQuestions.length > 0) {
@@ -34,24 +31,30 @@ const QuizApp = () => {
             } else {
               setSubmitted(true);
             }
-            return TIMER_DURATION;
+            return TIMER_DURATION; 
           }
           return time - 1;
         });
       }, 1000);
 
-      return () => clearInterval(timerInterval);
+      return () => clearInterval(timerInterval); 
     }
   }, [currQIndex, submitted, quizQuestions.length]);
 
-  const handleWordPick = (word, indexInAnswer) => {
+  const handleWordPick = (word) => {
     const currentQ = quizQuestions[currQIndex];
     const currentId = currentQ?.questionId;
     const existing = [...(userAnswers[currentId] || [])];
 
     if (existing.includes(word)) return;
 
-    existing[indexInAnswer] = word;
+    const firstEmpty = existing.findIndex((w) => !w);
+
+    if (firstEmpty !== -1) {
+      existing[firstEmpty] = word;
+    } else {
+      existing.push(word);
+    }
 
     setUserAnswers((prev) => ({
       ...prev,
@@ -74,12 +77,11 @@ const QuizApp = () => {
   const goToNext = () => {
     if (currQIndex + 1 < quizQuestions.length) {
       setCurrQIndex(currQIndex + 1);
-      setSecondsLeft(TIMER_DURATION); 
+      setSecondsLeft(TIMER_DURATION); // Reset timer
     } else {
       setSubmitted(true);
     }
   };
-
 
   const renderSentence = () => {
     const currentQ = quizQuestions[currQIndex];
@@ -106,7 +108,6 @@ const QuizApp = () => {
     );
   };
 
-  
   const renderResults = () => {
     const score = quizQuestions.filter((q) => {
       const given = userAnswers[q.questionId] || [];
@@ -161,7 +162,6 @@ const QuizApp = () => {
     );
   };
 
-
   if (quizQuestions.length === 0) return <div className="p-10 text-center text-lg">Loading...</div>;
   if (submitted) return renderResults();
 
@@ -184,7 +184,6 @@ const QuizApp = () => {
           <button className="text-red-600 hover:underline font-semibold">Quit</button>
         </div>
 
-
         <div className="w-full h-2 bg-gray-200 rounded-full mb-6 overflow-hidden">
           <div
             className="h-full bg-purple-500 transition-all duration-500 ease-in-out"
@@ -196,9 +195,7 @@ const QuizApp = () => {
           Select the correct words to complete the sentence
         </h3>
 
-    
         {renderSentence()}
-
 
         <div className="flex flex-wrap justify-center gap-3 mb-6">
           {currQ.options

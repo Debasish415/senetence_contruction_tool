@@ -10,11 +10,12 @@ const QuizApp = () => {
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    fetch("http://localhost:3001/data")
+    fetch("./sample.json")
       .then((res) => res.json())
       .then((data) => {
-        if (data?.questions) {
-          setQuizQuestions(data.questions);
+        console.log(data);
+        if (data?.data?.questions) {
+          setQuizQuestions(data?.data?.questions);
         } else {
           console.error("No questions found in the response");
         }

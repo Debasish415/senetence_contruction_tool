@@ -35,7 +35,7 @@ Auto-generated when you run `npm install`.
 
 📁 public/sample.json  
 Contains sample data used within the project.  
-It's placed in the public directory to allow direct access without importing or bundling.  
+It's placed in the public directory ,It can be fetched directly from public directory.  
 
 📝 Note:  
 I included `sample.json` in the public folder to avoid using external APIs or storing data elsewhere.  

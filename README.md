@@ -1,73 +1,83 @@
-# SENTENCE_CONSTRUCTION_TOOL 
+# 🛠️ Sentence Construction Tool
 
-tech stack used:-
-1. Vite
-2. ReactJS
-3. TailwindCSS
+A simple and interactive tool for learning and practicing sentence construction in English. Built using modern frontend technologies.
 
-Deployed Link (Vercel) --> https://senetence-contruction-tool.vercel.app/
+### 🔧 Tech Stack
+- ⚡ Vite – Fast and lightweight frontend build tool  
+- ⚛️ ReactJS – Component-based UI library  
+- 🎨 TailwindCSS – Utility-first CSS framework  
 
-## How to run
+### 🚀 Deployed Link
+🔗 https://senetence-contruction-tool.vercel.app/
 
-make sure you have git installed.
-1. write on terminal for cloning the project : "git clone https://github.com/Debasish415/senetence_contruction_tool.git"
-2. next "npm install"
-3. then "npm run dev"
+---
 
-📁 node_modules/
-Contains all installed dependencies and packages used in the project.
+## 📦 How to Run Locally
 
-Auto-generated when you run npm install.
+Make sure you have Git and Node.js installed on your machine.
 
-📁 public/
-sample.json: Likely a static JSON file for sample data, accessible directly via URL.
+1. Clone the repository:
+   git clone https://github.com/Debasish415/senetence_contruction_tool.git
 
-vite.svg: A static asset (SVG image), probably the Vite logo.
+2. Install dependencies:
+   npm install
 
-📁 src/
+3. Start the development server:
+   npm run dev
+
+---
+
+## 📁 Project Structure & File Overview
+
+📁 node_modules/  
+Contains all installed dependencies and packages.  
+Auto-generated when you run `npm install`.
+
+📁 public/sample.json  
+Contains sample data used within the project.  
+It's placed in the public directory to allow direct access without importing or bundling.  
+
+📝 Note:  
+I included `sample.json` in the public folder to avoid using external APIs or storing data elsewhere.  
+Normally, I wouldn’t share this file, but for now, it’s included for reference and testing purposes.
+
+📄 vite.svg  
+Static SVG image, likely the Vite logo.
+
+---
+
+📁 src/  
 Main source folder for all React components and styles.
 
-📁 assets/
-react.svg: SVG logo or image, likely used in the UI.
+📁 assets/  
+🔹 react.svg – SVG logo/image used in the UI.
 
-📄 App.css
-CSS file for styling the App.jsx component.
+📄 App.css – Styles for the App component.  
+📄 App.jsx – Root component of the React app.  
+📄 index.css – Global styles applied throughout the app.  
+📄 IntroPage.jsx – Likely the introductory or landing page component.  
+📄 main.jsx – Entry point of the React app; renders App into the DOM.  
+📄 QuizApp.jsx – Component that handles quiz logic and UI.
 
-📄 App.jsx
-Root component of the React app. Usually imports child components and defines overall layout.
+---
 
-📄 index.css
-Global CSS styles applied across the app.
+📄 .gitignore  
+Specifies files/folders to ignore in Git (e.g., node_modules, .env).
 
-📄 IntroPage.jsx
-Likely the intro or landing page component of your app.
+📄 eslint.config.js  
+Configuration for ESLint to maintain code quality and consistency.
 
-📄 main.jsx
-Entry point of the React application. Renders the App component into the DOM using ReactDOM.createRoot.
+📄 index.html  
+Main HTML file. React injects the app into `<div id="root">`.
 
-📄 QuizApp.jsx
-React component that handles the quiz logic and UI.
+📄 package.json  
+Project metadata: scripts, dependencies, and configurations.
 
-📄 .gitignore
-Specifies files/folders Git should ignore (e.g., node_modules, .env).
+📄 package-lock.json  
+Locks dependency versions for consistent installs across machines.
 
-📄 eslint.config.js
-Configures ESLint rules for code quality and linting.
+📄 README.md  
+Project documentation (this file).
 
-📄 index.html
-Main HTML file for the app. The React app gets injected into this file’s <div id="root">.
-
-📄 package-lock.json
-Automatically generated to lock versions of installed dependencies for consistency across environments.
-
-📄 package.json
-Holds metadata for the project: name, scripts, dependencies, etc.
-
-📄 README.md
-Markdown file for documenting your project (description, usage, installation steps, etc.).
-
-⚡ vite.config.js
-Configuration file for Vite (your build tool). Controls how Vite runs, builds, and serves the project.
-
-
-
+⚡ vite.config.js  
+Configuration file for Vite. Defines how the project builds and serves.

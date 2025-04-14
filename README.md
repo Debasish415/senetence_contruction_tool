@@ -1,12 +1,33 @@
-# React + Vite
+# SENTENCE_CONSTRUCTION_TOOL 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+tech stack used:-
+1. Vite
+2. ReactJS
+3. TailwindCSS
 
-Currently, two official plugins are available:
+Deployed Link (Vercel) --> https://senetence-contruction-tool.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## How to run
 
-## Expanding the ESLint configuration
+make sure you have git installed.
+1. write on terminal for cloning the project : "git clone https://github.com/Debasish415/senetence_contruction_tool.git"
+2. next "npm install"
+3. then "npm run dev"
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Functionality
+
+1.Build a web application that displays sentences with blank spaces
+2.Provide 4 word options that users can select to fill the blanks
+3.Allow users to unselect a word by clicking on the filled blank
+4.Implement a 30-second timer for each question
+5.Auto-navigate to the next question when the timer ends
+6.Enable the "Next" button only when all blanks are filled
+7.Fetch question data from a provided JSON API
+8.Implement proper state management for the application flow
+9.9. Create a feedback screen at the end that shows:
+  All correct and incorrect answers
+  The correct answers for any questions answered incorrectly, and 
+  Score he obtained out of 10.
+
+
+
